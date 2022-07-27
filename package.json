@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,11 +13,25 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "axios": "^0.27.2",
     "csstype": "^3.1.0",
+    "emotion-theming": "^11.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "i18next": "^21.8.14",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.33.1",
+    "react-i18next": "^11.18.1",
+    "react-lottie": "^1.2.3",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-select": "^5.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "tinycolor2": "^1.4.2",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
@@ -30,7 +47,11 @@
     "prepare": "husky install"
   },
   "_moduleAliases": {
-    "app": "src/"
+    "app": "src/",
+    "assets": "src/assets",
+    "components": "src/components",
+    "theme": "src/theme",
+    "state": "src/state"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +72,10 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-lottie": "^1.2.6",
+    "@types/redux-logger": "^3.0.9",
     "@types/tinycolor2": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
