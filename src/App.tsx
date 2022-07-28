@@ -2,10 +2,10 @@ import { ThemeProvider } from "@emotion/react";
 import { useSelector } from "react-redux";
 import getTheme from "theme";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Typography from "components/Typography";
-import Container from "components/Grids/Container";
+import Layout from "app/layout";
 import FontSetup from "theme/GlobalStyles/FontsSetup";
 import GlobalStyles from "theme/GlobalStyles/GlobalStyles";
+import AppRouts from "app/routes";
 import { RootState } from "state";
 
 function App() {
@@ -22,9 +22,9 @@ function App() {
             dir: language === "en" ? "ltr" : "rtl",
           }}
         />
-        <Container>
-          <Typography.H2 text="this is app" />
-        </Container>
+        <Layout>
+          <AppRouts />
+        </Layout>
       </HelmetProvider>
     </ThemeProvider>
   );

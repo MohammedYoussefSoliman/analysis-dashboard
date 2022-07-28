@@ -61,7 +61,9 @@ export const manageFontSize = (
 export const configureFontSize = (fontSize: FontSizeType) => {
   if (fontSize instanceof Object) {
     const keys = Object.keys(fontSize) as Array<keyof typeof fontSize>;
-    let stylesObject = {};
+    let stylesObject = {
+      fontSize: fontSize.xs,
+    };
     keys.forEach((key) => {
       stylesObject = {
         ...stylesObject,

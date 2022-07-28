@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import isPropValid from "@emotion/is-prop-valid";
 import devices from "theme/sizes";
 import styled from "@emotion/styled";
 import manageContainerConfig from "./mixin";
@@ -8,7 +9,10 @@ type StyledContainerType = {
   width: ConfigWidth;
 };
 
-const Wrapper = styled("div")<StyledContainerType>`
+const shouldForwardProp = (prop: string) =>
+  isPropValid(prop) && !["width"].includes(prop);
+
+const Wrapper = styled("div", { shouldForwardProp })<StyledContainerType>`
   ${css`
     label: container;
   `}
