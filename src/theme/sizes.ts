@@ -19,12 +19,12 @@ export const container = {
 };
 
 const devices = {
-  xSmall: `@media screen and (min-width: ${breakpoints.xs})`,
-  small: `@media screen and (min-width: ${breakpoints.sm})`,
-  medium: `@media screen and (min-width: ${breakpoints.md})`,
-  large: `@media screen and (min-width: ${breakpoints.lg})`,
-  xLarge: `@media screen and (min-width: ${breakpoints.xl})`,
-  xxLarge: `@media screen and (min-width: ${breakpoints.xxl})`,
+  xs: `@media screen and (min-width: ${breakpoints.xs})`,
+  sm: `@media screen and (min-width: ${breakpoints.sm})`,
+  md: `@media screen and (min-width: ${breakpoints.md})`,
+  lg: `@media screen and (min-width: ${breakpoints.lg})`,
+  xl: `@media screen and (min-width: ${breakpoints.xl})`,
+  xxl: `@media screen and (min-width: ${breakpoints.xxl})`,
   hd: `@media screen and (min-width: ${breakpoints.hd})`,
 };
 

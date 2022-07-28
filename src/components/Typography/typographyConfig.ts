@@ -1,4 +1,4 @@
-import { FontSizes } from "./types";
+import { FontSizes } from "theme/types";
 
 const typographyConfig: FontSizes = {
   h1: {
@@ -64,16 +64,6 @@ const typographyConfig: FontSizes = {
       lg: "18px",
       xl: "20px",
       xxl: "22px",
-    },
-    weight: 600,
-  },
-  h7: {
-    sizes: {
-      xs: "11px",
-      md: "13px",
-      lg: "14px",
-      xl: "16px",
-      xxl: "19px",
     },
     weight: 600,
   },
