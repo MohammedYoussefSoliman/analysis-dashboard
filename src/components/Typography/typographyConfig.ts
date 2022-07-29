@@ -45,7 +45,7 @@ const typographyConfig: FontSizes = {
       xl: "28px",
       xxl: "32px",
     },
-    weight: 600,
+    weight: 500,
   },
   h5: {
     sizes: {
@@ -55,7 +55,7 @@ const typographyConfig: FontSizes = {
       xl: "22px",
       xxl: "26px",
     },
-    weight: 600,
+    weight: 500,
   },
   h6: {
     sizes: {
@@ -65,7 +65,7 @@ const typographyConfig: FontSizes = {
       xl: "20px",
       xxl: "22px",
     },
-    weight: 600,
+    weight: 500,
   },
   p1: {
     sizes: {

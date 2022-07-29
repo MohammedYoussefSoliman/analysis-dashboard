@@ -21,6 +21,7 @@ type ColorType = {
 
 export type ColorsPalletType = {
   shades: ColorType;
+  opposite: ColorType;
   text: {
     primary: string;
     secondary: string;

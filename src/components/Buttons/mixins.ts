@@ -9,22 +9,19 @@ export const resolveColorStyles = (
 ) => {
   const tinyColor = tinyColor2(color);
   const isLightColor = tinyColor.isLight();
-  let hoverColor: string;
   let borderColor: string;
 
   if (isLightColor) {
-    hoverColor = tinyColor.darken(5).setAlpha(0.1).toString();
-    borderColor = tinyColor.darken(5).toString();
+    borderColor = tinyColor.darken(2).toString();
   } else {
-    hoverColor = tinyColor.lighten(5).setAlpha(0.1).toString();
-    borderColor = tinyColor.lighten(5).toString();
+    borderColor = tinyColor.toString();
   }
 
   return css`
     background: transparent;
     border: ${withBorder ? `1px solid ${borderColor}` : "none"};
     &:hover {
-      background: ${hoverColor};
+      background: ${tinyColor.darken(5).setAlpha(0.1).toString()};
     }
   `;
 };

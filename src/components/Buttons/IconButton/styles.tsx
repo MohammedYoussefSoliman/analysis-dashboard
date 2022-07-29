@@ -9,7 +9,7 @@ const StyledIconButton = styled("button")<StyledIconButtonPropsType>`
   justify-content: center;
   outline: none;
   cursor: pointer;
-  ${({ color }) => resolveColorStyles(color)};
+  ${({ color, withBorder }) => resolveColorStyles(color, withBorder)};
   ${({ size }) => mangeIconButtonSize(size || "md")};
   ${({ rounded }) =>
     rounded &&

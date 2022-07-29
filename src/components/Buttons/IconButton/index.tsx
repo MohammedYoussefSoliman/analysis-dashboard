@@ -6,11 +6,12 @@ export default function IconButton({
   iconColor,
   iconSize,
   color,
+  iconProps,
   ...rest
 }: IconButtonPropsType) {
   return (
     <StyledButton color={color} {...rest}>
-      <Icon color={iconColor || color} size={iconSize} />
+      <Icon color={iconColor || color} size={iconSize} {...iconProps} />
     </StyledButton>
   );
 }

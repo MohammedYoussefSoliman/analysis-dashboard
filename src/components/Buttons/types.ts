@@ -26,7 +26,7 @@ export type StyledButtonPropsType = Omit<
 
 export type IconButtonPropsType = {
   onClick?: () => void;
-  Icon: React.ComponentType<IconPropsType>;
+  Icon: React.ComponentType<any>;
   color: Property.Color;
   disabled?: boolean;
   iconColor?: string;
@@ -36,6 +36,9 @@ export type IconButtonPropsType = {
   className?: string;
   rounded?: boolean;
   withBorder?: boolean;
+  iconProps?: {
+    [key: string]: any;
+  };
 };
 
 export type StyledIconButtonPropsType = Omit<

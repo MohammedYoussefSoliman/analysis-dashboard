@@ -1,5 +1,7 @@
+import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { useSelector } from "react-redux";
+import i18next from "i18next";
 import getTheme from "theme";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Layout from "app/layout";
@@ -11,6 +13,10 @@ import { RootState } from "state";
 function App() {
   const { mode, language } = useSelector((state: RootState) => state.ui);
 
+  React.useEffect(() => {
+    i18next.changeLanguage(language);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <ThemeProvider theme={getTheme(mode)}>
       <HelmetProvider>

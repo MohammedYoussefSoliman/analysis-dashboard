@@ -14,13 +14,9 @@ const slice = createSlice({
     changeThemeMode(state, action: PayloadAction<"dark" | "light">) {
       return { ...state, mode: action.payload };
     },
-    toggleLanguage(state) {
-      if (state.language === "ar") {
-        i18n.changeLanguage("en");
-        return { ...state, language: "en" };
-      }
-      i18n.changeLanguage("ar");
-      return { ...state, language: "ar" };
+    toggleLanguage(state, action: PayloadAction<"ar" | "en">) {
+      i18n.changeLanguage(action.payload);
+      return { ...state, language: action.payload };
     },
   },
 });
