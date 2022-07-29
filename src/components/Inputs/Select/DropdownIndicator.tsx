@@ -1,7 +1,7 @@
 import { SelectIcon } from "assets/svgs";
 import { DropdownIndicatorProps, components } from "react-select";
 import { useTheme } from "@emotion/react";
-import { OptionType } from "./types";
+import { OptionType } from "../types";
 
 const { DropdownIndicator } = components;
 

@@ -1,5 +1,5 @@
 import { PlaceholderProps, components } from "react-select";
-import { OptionType } from "./types";
+import { OptionType } from "../types";
 
 export default function Placeholder(props: PlaceholderProps<OptionType, true>) {
   const { children } = props;

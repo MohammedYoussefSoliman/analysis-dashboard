@@ -1,7 +1,7 @@
 import { useTheme } from "@emotion/react";
 import Typography from "components/Typography";
 import { SingleValueProps, components } from "react-select";
-import { OptionType } from "./types";
+import { OptionType } from "../types";
 
 export default function SingleValue({
   children,

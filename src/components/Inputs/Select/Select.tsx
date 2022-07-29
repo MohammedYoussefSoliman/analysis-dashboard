@@ -1,10 +1,11 @@
 import React from "react";
 import Select from "react-select";
+import { useTheme } from "@emotion/react";
 import { useTranslation } from "react-i18next";
 import { Flex } from "components/Grids";
-import InputError from "./InputError";
+import Typography from "components/Typography";
 import useSelectStyles from "./useSelectStyles";
-import { SelectProps } from "./types";
+import { SelectProps } from "../types";
 import Option from "./Option";
 import Placeholder from "./Placeholder";
 import SingleValue from "./SingleValue";
@@ -19,6 +20,7 @@ export default function SelectInput({
   onChange,
   value,
 }: SelectProps) {
+  const theme = useTheme();
   const styles = useSelectStyles({
     error: Boolean(error),
     small,
@@ -50,7 +52,13 @@ export default function SelectInput({
         onChange={onChange}
         value={value}
       />
-      {error && <InputError error={error} />}
+      {error && (
+        <Typography.Small
+          text={error}
+          color={theme.colors.error}
+          weight={500}
+        />
+      )}
     </Flex>
   );
 }
