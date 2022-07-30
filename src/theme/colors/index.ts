@@ -19,8 +19,8 @@ const colors = {
       disabled: "#6E6E6E",
     },
     error: "#FE2C32",
-    success: "#21A339",
-    info: "#325A9F",
+    success: "#1ED33F",
+    info: "#2A68D3",
   },
   dark: {
     shades: {
@@ -41,9 +41,9 @@ const colors = {
       secondary: "#67A9ED",
       disabled: "#8A8A8A",
     },
-    error: "#DF6668",
-    success: "#94CE9C",
-    info: "#8AB6E9",
+    error: "#EA2B31",
+    success: "#21A339",
+    info: "#2A68D3",
   },
 };
 

@@ -1,9 +1,15 @@
 import { css } from "@emotion/react";
+import isPropValid from "@emotion/is-prop-valid";
 import styled from "@emotion/styled";
 import { StyledIconButtonPropsType } from "../types";
 import { resolveColorStyles } from "../mixins";
 
-const StyledButton = styled("button")<StyledIconButtonPropsType>`
+const shouldForwardProp = (prop: string) =>
+  isPropValid(prop) && !["color"].includes(prop);
+
+const StyledButton = styled("button", {
+  shouldForwardProp,
+})<StyledIconButtonPropsType>`
   display: flex;
   align-items: center;
   justify-content: center;

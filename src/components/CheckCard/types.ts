@@ -3,4 +3,8 @@ export interface CheckedCardType {
   count: number;
   label: string;
   city: string;
+  color?: {
+    dark: string;
+    light: string;
+  };
 }

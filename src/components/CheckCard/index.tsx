@@ -5,8 +5,7 @@ import Card from "components/Card";
 import { CheckBoxIcon, CampIcon } from "assets/svgs";
 import { Flex } from "components/Grids";
 import Typography from "components/Typography";
-import { randomColorsGenerator } from "helpers/functions";
-import { useAppDispatch } from "hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 import { setCheckedSchool } from "state/courses/slice";
 import { CheckedCardType } from "./types";
 
@@ -15,17 +14,18 @@ export default function CheckCard({
   label,
   value,
   city,
+  color,
 }: CheckedCardType) {
   const theme = useTheme();
   const dispatch = useAppDispatch();
-
+  const { ui } = useAppSelector((state) => state);
   const [checked, setChecked] = React.useState<boolean>(false);
-  const [color, setColor] = React.useState<string>("");
-  const boxColor = checked ? color : theme.colors.opposite[200];
+  const currentColor = color || {
+    dark: theme.colors.info,
+    light: theme.colors.info,
+  };
+  const boxColor = checked ? currentColor[ui.mode] : theme.colors.opposite[200];
 
-  React.useEffect(() => {
-    setColor(randomColorsGenerator("dark"));
-  }, []);
   return (
     <Card
       onClick={() => {
@@ -38,7 +38,6 @@ export default function CheckCard({
         );
       }}
       color={boxColor}
-      withBorder
     >
       <Flex p={16} gap="32px" align="center" fullWidth>
         <CheckBoxIcon
@@ -47,7 +46,7 @@ export default function CheckCard({
         />
         <Flex direction="column" gap="8px" flex={1}>
           <Flex gap="4px" align="flex-end">
-            <Typography.H5
+            <Typography.H3
               color={tinycolor(boxColor).darken(10).toString()}
               text={count}
             />

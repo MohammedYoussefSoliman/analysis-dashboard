@@ -3,7 +3,7 @@ import Paper from "components/Paper";
 import { Container, Flex } from "components/Grids";
 import { useAppDispatch, useAsync } from "hooks";
 import ErrorBoundary from "components/ErrorBoundary";
-import listCourses from "state/courses/actions";
+import { listCourses } from "state/courses/actions";
 import LoadingScreen from "components/LoadingScreen";
 import Filter from "components/Filter";
 import Typography from "components/Typography";
@@ -24,7 +24,7 @@ export default function Dashboard() {
           <Paper fullWidth>
             <Filter />
           </Paper>
-          <Flex gap="32px" fullWidth flex={1}>
+          <Flex gap="16px" fullWidth flex={1}>
             <Paper flex={5}>
               <Typography.P3 text="chart" />
             </Paper>

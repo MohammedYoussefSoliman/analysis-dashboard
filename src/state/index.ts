@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: "analysis-dashboard-storage",
   storage,
-  whitelist: ["ui", "coursesState"],
+  whitelist: ["ui"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

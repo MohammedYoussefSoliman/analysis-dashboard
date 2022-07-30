@@ -7,19 +7,27 @@ import { StyledCardType } from "./types";
 const Wrapper = styled(Flex)<StyledCardType>`
   all: unset;
   position: relative;
-  border-radius: 5px;
-  ${({ withBorder, color, theme }) =>
-    withBorder &&
+  border-radius: 10px;
+  cursor: pointer;
+  ${({ variant, color, theme }) =>
+    variant === "outlined"
+      ? css`
+          border: 2px solid ${color || theme.colors.shades[500]};
+        `
+      : css`
+          border: none;
+        `}
+  ${({ color, theme, variant }) =>
     css`
-      border: 2px solid ${color || theme.colors.shades[500]};
-    `}
-  ${({ color, theme }) =>
-    css`
-      background-color: ${theme.colors.shades[200]};
+      background-color: ${variant === "filled"
+        ? color
+        : theme.colors.shades[200]};
       &:hover {
         background-color: ${tinycolor(color || theme.colors.shades[500])
-          .setAlpha(0.2)
+          .darken(5)
+          .setAlpha(0.4)
           .toString()};
+        color: ${theme.colors.shades[100]};
       }
     `}
 `;

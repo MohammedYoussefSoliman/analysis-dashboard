@@ -14,10 +14,10 @@ export default function Aside({ children, flex, header }: AsideProps) {
 
   return (
     <Wrapper ph={20} as="aside" direction="column" gap="32px" flex={flex}>
-      <Card color={theme.colors.shades[500]} withBorder>
+      <Card color={theme.colors.success} variant="filled">
         {header}
       </Card>
-      <Flex className="content" direction="column" gap="32px" fullWidth>
+      <Flex className="content" direction="column" gap="16px" fullWidth>
         {children}
       </Flex>
     </Wrapper>

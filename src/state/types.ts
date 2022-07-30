@@ -17,7 +17,24 @@ type Months =
   | "Nov"
   | "Dec";
 
+type SchoolType = {
+  name: string;
+  color: {
+    light: string;
+    dark: string;
+  };
+};
+
 export type Course = {
+  id: string;
+  month: Months;
+  camp: string;
+  country: string;
+  school: string;
+  lessons: number;
+};
+
+export type ResponseCourse = {
   id: string;
   month: Months;
   camp: string;
@@ -48,4 +65,5 @@ export type CoursesState = {
   countries: string[];
   camps: string[];
   schools: string[];
+  schoolsExtras: SchoolType[];
 };

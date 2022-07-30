@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { extractUniqueValues } from "helpers/functions";
-import listCourses from "./actions";
+import tinycolor from "tinycolor2";
+import { extractUniqueValues, randomColorsGenerator } from "helpers/functions";
+import { filterCourses, listCourses } from "./actions";
 import {
   CoursesState,
   CoursesFilterConfig,
@@ -23,6 +24,7 @@ const initialState: CoursesState = {
   countries: [],
   camps: [],
   schools: [],
+  schoolsExtras: [],
 };
 
 const slice = createSlice({
@@ -32,49 +34,12 @@ const slice = createSlice({
     setCourses: (state, action: PayloadAction<Course[]>) => {
       return { ...state, courses: action.payload };
     },
-    filterCourses: (
+    setFilterCourses: (
       state: CoursesState,
       action: PayloadAction<
         Omit<CoursesFilterConfig, "country" | "camp" | "school">
       >,
-    ) => {
-      let config = { ...action.payload };
-      let courses = [...state.courses];
-      const filteredCourses = [...state.filteredCourses];
-      if (config.value) {
-        if (config.selection === "country") {
-          courses = courses.filter(
-            (course) => course[config.selection] === config.value,
-          );
-        } else if (
-          config.value === "showAll" &&
-          config.selection === "school"
-        ) {
-          courses = courses.filter((course) => {
-            if (state.filterConfig.country && state.filterConfig.camp)
-              return (
-                course.country === state.filterConfig.country &&
-                course.camp === state.filterConfig.camp
-              );
-            return true;
-          });
-        } else {
-          courses = filteredCourses.filter(
-            (course) => course[config.selection] === config.value,
-          );
-        }
-        config = { ...config, [config.selection]: config.value };
-      }
-      const camps = extractUniqueValues(courses, "camp");
-      const schools = extractUniqueValues(courses, "school");
-      return {
-        ...state,
-        filteredCourses: courses,
-        camps,
-        schools,
-        filterConfig: { ...state.filterConfig, ...config },
-      };
-    },
+    ) => filterCourses(state, action),
     setCheckedSchool: (
       state: CoursesState,
       action: PayloadAction<CheckedSchoolsConfig>,
@@ -99,7 +64,26 @@ const slice = createSlice({
       const countries = extractUniqueValues(action.payload, "country");
       const camps = extractUniqueValues(action.payload, "camp");
       const schools = extractUniqueValues(action.payload, "school");
-      return { ...state, courses: action.payload, countries, camps, schools };
+      const schoolsExtras = extractUniqueValues(action.payload, "school").map(
+        (school) => {
+          const color = randomColorsGenerator("dark");
+          return {
+            name: school,
+            color: {
+              light: color,
+              dark: tinycolor(color).lighten(10).toString(),
+            },
+          };
+        },
+      );
+      return {
+        ...state,
+        courses: action.payload,
+        countries,
+        camps,
+        schools,
+        schoolsExtras,
+      };
     },
     [listCourses.rejected.type]: (state: CoursesState) => {
       return { ...state, error: "unableToFetchCourses" };
@@ -107,5 +91,5 @@ const slice = createSlice({
   },
 });
 
-export const { setCourses, filterCourses, setCheckedSchool } = slice.actions;
+export const { setCourses, setFilterCourses, setCheckedSchool } = slice.actions;
 export default slice.reducer;
