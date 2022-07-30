@@ -6,7 +6,7 @@ const listCourses = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetchCourses();
-      return response.data;
+      return response;
     } catch (error) {
       return rejectWithValue([]);
     }

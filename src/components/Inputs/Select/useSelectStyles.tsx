@@ -21,6 +21,7 @@ function useSelectStyles({ error, small }: SelectStyleSettingsType) {
       padding: small ? "0.5re," : "1rem",
       height: small ? "fit-content" : "70px",
       boxShadow: "none",
+      background: theme.colors.shades[100],
       "&:hover": {
         border: `1px solid ${theme.colors.opposite[200]}`,
       },
@@ -41,15 +42,19 @@ function useSelectStyles({ error, small }: SelectStyleSettingsType) {
           ? theme.colors.info
           : state.isFocused
           ? tinycolor(theme.colors.info).darken(10).toString()
-          : "transparent"
+          : theme.colors.shades[200]
       }`,
-      color: `${state.isSelected && theme.colors.shades[100]}`,
+      color: `${state.isSelected && theme.colors.opposite[100]}`,
       p: {
-        color: `${state.isSelected && theme.colors.shades[100]}`,
+        color: `${state.isSelected && theme.colors.opposite[100]}`,
       },
       "&:hover": {
-        background: theme.colors.shades[200],
+        background: theme.colors.shades[300],
       },
+    }),
+    menu: (base: any) => ({
+      ...base,
+      background: theme.colors.shades[100],
     }),
   };
 }

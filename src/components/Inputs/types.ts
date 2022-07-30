@@ -33,17 +33,15 @@ export interface SelectProps
   label?: React.ReactNode;
   error?: string;
   small?: boolean;
-  changeHandler?: (value: any) => void;
-  control: Control<any>;
-  validationRules?: Partial<FormValidationRules>;
+  onChange?: (value: any) => void;
 }
 
 export type InputControllerProps = {
-  control: Control<any>;
+  control: Control<any, any>;
   validationRules?: Partial<FormValidationRules>;
 };
 
-export interface CheckedCardType extends React.InputHTMLAttributes<any> {
+export interface CheckedCardType {
   active: boolean;
   name: string;
   count: number;

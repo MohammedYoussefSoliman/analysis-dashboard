@@ -6,4 +6,6 @@ type SelectPropsType = SelectProps & InputControllerProps;
 
 const Select = withHookForm<SelectPropsType>(Element);
 
+export { default as SelectInput } from "./Select";
+
 export default Select;

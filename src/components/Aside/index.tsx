@@ -1,14 +1,25 @@
 import React from "react";
+import { useTheme } from "@emotion/react";
+import { Flex } from "components/Grids";
+import Card from "components/Card";
 import Wrapper from "./styles";
 
 type AsideProps = {
   flex: number;
   children: React.ReactNode;
+  header: React.ReactNode;
 };
-export default function Aside({ children, flex }: AsideProps) {
+export default function Aside({ children, flex, header }: AsideProps) {
+  const theme = useTheme();
+
   return (
-    <Wrapper as="aside" direction="column" gap="32px" flex={flex}>
-      {children}
+    <Wrapper ph={20} as="aside" direction="column" gap="32px" flex={flex}>
+      <Card color={theme.colors.shades[500]} withBorder>
+        {header}
+      </Card>
+      <Flex className="content" direction="column" gap="32px" fullWidth>
+        {children}
+      </Flex>
     </Wrapper>
   );
 }

@@ -1,2 +1,1 @@
-export { default as Select } from "./Select";
-export { default as CheckCard } from "./CheckCard";
+export { default as Select, SelectInput } from "./Select";

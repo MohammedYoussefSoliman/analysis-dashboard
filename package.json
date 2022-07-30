@@ -51,6 +51,7 @@
   },
   "_moduleAliases": {
     "app": "src/",
+    "hooks": "src/hooks",
     "assets": "src/assets",
     "helpers": "src/helpers",
     "components": "src/components",

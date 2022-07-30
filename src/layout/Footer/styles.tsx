@@ -4,7 +4,7 @@ import { Flex } from "components/Grids";
 
 const Wrapper = styled(Flex)`
   label: app-footer;
-  height: 60px;
+  height: 40px;
   z-index: 1000;
   ${({ theme }) => css`
     background: ${theme.colors.shades[200]};

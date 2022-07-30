@@ -1,17 +1,16 @@
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
-import { useSelector } from "react-redux";
 import i18next from "i18next";
 import getTheme from "theme";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useAppSelector } from "hooks";
 import Layout from "app/layout";
 import FontSetup from "theme/GlobalStyles/FontsSetup";
 import GlobalStyles from "theme/GlobalStyles/GlobalStyles";
 import AppRouts from "app/routes";
-import { RootState } from "state";
 
 function App() {
-  const { mode, language } = useSelector((state: RootState) => state.ui);
+  const { mode, language } = useAppSelector((state) => state.ui);
 
   React.useEffect(() => {
     i18next.changeLanguage(language);

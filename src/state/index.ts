@@ -4,15 +4,17 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import uiSlice from "./ui/slice";
+import coursesSlice from "./courses/slice";
 
 const rootReducer = combineReducers({
   ui: uiSlice,
+  coursesState: coursesSlice,
 });
 
 const persistConfig = {
   key: "analysis-dashboard-storage",
   storage,
-  whitelist: ["ui"],
+  whitelist: ["ui", "coursesState"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

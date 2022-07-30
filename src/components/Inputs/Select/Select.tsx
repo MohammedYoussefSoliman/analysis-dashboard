@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "react-select";
+import Select, { SingleValue as SingleValueType } from "react-select";
 import { useTheme } from "@emotion/react";
 import { useTranslation } from "react-i18next";
 import { Flex } from "components/Grids";
@@ -49,7 +49,10 @@ export default function SelectInput({
           SingleValue,
         }}
         options={options}
-        onChange={onChange}
+        onChange={(val) => {
+          const opt = val as SingleValueType<any>;
+          if (onChange) onChange(opt);
+        }}
         value={value}
       />
       {error && (

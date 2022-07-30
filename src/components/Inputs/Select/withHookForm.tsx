@@ -7,7 +7,7 @@ import { SelectProps, InputControllerProps } from "../types";
 export default function WithHookFormController<
   T extends SelectProps & InputControllerProps,
 >(WrappedComponent: React.ComponentType<T>) {
-  return function Component({ control, changeHandler, ...props }: T) {
+  return function Component({ control, onChange, ...props }: T) {
     return (
       <Controller
         control={control}
@@ -23,11 +23,11 @@ export default function WithHookFormController<
               if (val) {
                 if (_.isArray(val)) {
                   field.onChange(val.map((c) => c.value));
-                  if (changeHandler) changeHandler(val.map((c) => c.value));
+                  if (onChange) onChange(val.map((c) => c.value));
                 } else {
                   const value = val as SingleValue<any>;
                   field.onChange(value.value);
-                  if (changeHandler) changeHandler(value.value);
+                  if (onChange) onChange(value.value);
                 }
               }
             }}
