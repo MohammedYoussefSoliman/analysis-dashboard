@@ -36,7 +36,7 @@ export default function GlobalStyles() {
           font-family: ${font};
           width: 100%;
           white-space: normal;
-          background-color: ${colors.shades[100]};
+          background-color: ${colors.shades[300]};
         }
       `}
     />

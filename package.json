@@ -52,6 +52,7 @@
   "_moduleAliases": {
     "app": "src/",
     "assets": "src/assets",
+    "helpers": "src/helpers",
     "components": "src/components",
     "theme": "src/theme",
     "state": "src/state"
