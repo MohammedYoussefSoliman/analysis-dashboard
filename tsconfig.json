@@ -23,5 +23,5 @@
       }
     ]
   },
-  "include": ["src"]
+  "include": ["src", "cypress", "cypress.config.ts"]
 }
