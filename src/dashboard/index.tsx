@@ -6,7 +6,7 @@ import ErrorBoundary from "components/ErrorBoundary";
 import { listCourses } from "state/courses/actions";
 import LoadingScreen from "components/LoadingScreen";
 import Filter from "components/Filter";
-import Typography from "components/Typography";
+import Chart from "components/Chart";
 import Aside from "./Aside";
 
 export default function Dashboard() {
@@ -26,7 +26,7 @@ export default function Dashboard() {
           </Paper>
           <Flex gap="16px" fullWidth flex={1}>
             <Paper flex={5}>
-              <Typography.P3 text="chart" />
+              <Chart />
             </Paper>
             <Aside />
           </Flex>

@@ -7,6 +7,18 @@ const ar = {
   lightMode: "الوضع الفاتح",
   analyticalDashboard: "لوحة تحكم تحليلية",
   copyrights: "جميع الحقوق محفوظة",
+  Jan: "يناير",
+  Feb: "فبراير",
+  Mar: "مارس",
+  Apr: "إبريل",
+  May: "مايو",
+  Jun: "يونيو",
+  Jul: "يوليو",
+  Aug: "أغسطس",
+  Sep: "سبتمبر",
+  Oct: "اكتوبر",
+  Nov: "نوفمبر",
+  Dec: "ديسمبر",
   ...dashboardAr,
 };
 

@@ -18,13 +18,20 @@ export default function CheckCard({
 }: CheckedCardType) {
   const theme = useTheme();
   const dispatch = useAppDispatch();
-  const { ui } = useAppSelector((state) => state);
+  const { ui, coursesState } = useAppSelector((state) => state);
+
+  const { checkedSchool } = coursesState;
+
   const [checked, setChecked] = React.useState<boolean>(false);
   const currentColor = color || {
     dark: theme.colors.info,
     light: theme.colors.info,
   };
   const boxColor = checked ? currentColor[ui.mode] : theme.colors.opposite[200];
+
+  React.useEffect(() => {
+    setChecked(checkedSchool.includes(value));
+  }, [checkedSchool, value]);
 
   return (
     <Card

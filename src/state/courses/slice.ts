@@ -66,7 +66,7 @@ const slice = createSlice({
       const schools = extractUniqueValues(action.payload, "school");
       const schoolsExtras = extractUniqueValues(action.payload, "school").map(
         (school) => {
-          const color = randomColorsGenerator("dark");
+          const color = randomColorsGenerator("bright");
           return {
             name: school,
             color: {
