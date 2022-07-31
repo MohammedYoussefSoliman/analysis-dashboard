@@ -10,6 +10,7 @@ const Paper = styled(Flex)`
   `}
   border-radius: 5px;
   padding: 16px;
+  min-width: 250px;
   ${devices.md} {
     border-radius: 7.5px;
     padding: 24px;

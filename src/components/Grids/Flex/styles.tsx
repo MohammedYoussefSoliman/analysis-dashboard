@@ -5,7 +5,8 @@ import { flexGapCalculator, calculateFlexGap, resolveSpacing } from "./mixins";
 import { StyledFlexWrapper } from "./types";
 
 const shouldForwardProp = (prop: string) =>
-  isPropValid(prop) && !["gap", "width", "height", "direction"].includes(prop);
+  isPropValid(prop) &&
+  !["gap", "width", "wrap", "height", "direction"].includes(prop);
 
 // eslint-disable-next-line prettier/prettier
 const Wrapper = styled("div", { shouldForwardProp })<StyledFlexWrapper>`
@@ -40,6 +41,21 @@ const Wrapper = styled("div", { shouldForwardProp })<StyledFlexWrapper>`
     height &&
     css`
       height: ${height};
+    `}
+    ${({ withWrap }) =>
+    withWrap &&
+    css`
+      flex-wrap: wrap;
+    `}
+    ${({ maxWidth }) =>
+    maxWidth &&
+    css`
+      max-width: ${maxWidth};
+    `}
+    ${({ minWidth }) =>
+    minWidth &&
+    css`
+      min-width: ${minWidth};
     `}
     ${({ direction }) =>
     direction

@@ -1,14 +1,10 @@
 import React from "react";
 import Wrapper from "components/Aside";
 import { Flex } from "components/Grids";
+import { reduceLessonsCount } from "helpers/functions";
 import { useAppSelector } from "hooks";
 import CheckCard from "components/CheckCard";
 import Typography from "components/Typography";
-import { Course } from "state/types";
-
-const reduceLessonsCount = (array: Course[]) => {
-  return array.map((item) => item.lessons).reduce((prev, cur) => prev + cur, 0);
-};
 
 export default function Aside() {
   const { coursesState } = useAppSelector((state) => state);

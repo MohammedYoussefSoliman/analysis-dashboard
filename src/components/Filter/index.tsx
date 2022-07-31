@@ -4,6 +4,7 @@ import { setFilterCourses } from "state/courses/slice";
 import { CoursesFilterConfig } from "state/types";
 import { SelectInput } from "components/Inputs";
 import { Flex } from "components/Grids";
+import Typography from "../Typography";
 
 const mapOptions = (item: string) => ({
   label: item,
@@ -24,80 +25,87 @@ export default function Filter() {
   const { countries, camps, schools, filterConfig } = coursesState;
 
   return (
-    <Flex direction="column" gap="32px" fullWidth>
-      <Flex gap="32px" fullWidth>
-        <SelectInput
-          isSearchable
-          options={countries.map(mapOptions)}
-          name="country"
-          label="select country"
-          value={
-            filterConfig.country
-              ? [
-                  {
-                    label: filterConfig.country,
-                    value: filterConfig.country,
-                  },
-                ]
-              : undefined
-          }
-          onChange={(option) => {
-            handleFilter({
-              selection: "country",
-              value: option.value,
-            });
-          }}
-        />
-        <SelectInput
-          isSearchable
-          options={camps.map(mapOptions)}
-          name="camp"
-          label="select camp"
-          value={
-            filterConfig.camp
-              ? [
-                  {
-                    label: filterConfig.camp,
-                    value: filterConfig.camp,
-                  },
-                ]
-              : undefined
-          }
-          onChange={(option) => {
-            handleFilter({
-              selection: "camp",
-              value: option.value,
-            });
-          }}
-        />
-        <SelectInput
-          isSearchable
-          options={[
-            {
-              label: "showAll",
-              value: "showAll",
-            },
-            ...schools.map(mapOptions),
-          ]}
-          name="school"
-          label="select school"
-          value={
-            filterConfig.school
-              ? [
-                  {
-                    label: filterConfig.school,
-                    value: filterConfig.school,
-                  },
-                ]
-              : undefined
-          }
-          onChange={(option) => {
-            handleFilter({
-              selection: "school",
-              value: option.value,
-            });
-          }}
-        />
+    <Flex direction="column" gap="16px" fullWidth>
+      <Typography.H4 text="filter" />
+      <Flex gap="32px" fullWidth withWrap>
+        <Flex minWidth="200px" flex={1}>
+          <SelectInput
+            isSearchable
+            options={countries.map(mapOptions)}
+            name="country"
+            label="select country"
+            value={
+              filterConfig.country
+                ? [
+                    {
+                      label: filterConfig.country,
+                      value: filterConfig.country,
+                    },
+                  ]
+                : undefined
+            }
+            onChange={(option) => {
+              handleFilter({
+                selection: "country",
+                value: option.value,
+              });
+            }}
+          />
+        </Flex>
+        <Flex minWidth="200px" flex={1}>
+          <SelectInput
+            isSearchable
+            options={camps.map(mapOptions)}
+            name="camp"
+            label="select camp"
+            value={
+              filterConfig.camp
+                ? [
+                    {
+                      label: filterConfig.camp,
+                      value: filterConfig.camp,
+                    },
+                  ]
+                : undefined
+            }
+            onChange={(option) => {
+              handleFilter({
+                selection: "camp",
+                value: option.value,
+              });
+            }}
+          />
+        </Flex>
+        <Flex minWidth="200px" flex={1}>
+          <SelectInput
+            isSearchable
+            options={[
+              {
+                label: "showAll",
+                value: "showAll",
+              },
+              ...schools.map(mapOptions),
+            ]}
+            name="school"
+            label="select school"
+            value={
+              filterConfig.school
+                ? [
+                    {
+                      label: filterConfig.school,
+                      value: filterConfig.school,
+                    },
+                  ]
+                : undefined
+            }
+            onChange={(option) => {
+              handleFilter({
+                selection: "school",
+                value: option.value,
+              });
+            }}
+          />
+        </Flex>
       </Flex>
     </Flex>
   );

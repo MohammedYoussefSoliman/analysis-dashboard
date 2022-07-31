@@ -16,6 +16,8 @@ import {
 } from "chart.js";
 import { Line, getElementAtEvent } from "react-chartjs-2";
 import { useTranslation } from "react-i18next";
+import Typography from "components/Typography";
+import { Flex } from "components/Grids";
 
 ChartJS.register(
   CategoryScale,
@@ -145,7 +147,12 @@ export default function Chart() {
     navigate(`/school/${slug}`);
   };
 
-  if (checkedSchool.length === 0) return null;
+  if (checkedSchool.length === 0)
+    return (
+      <Flex justify="center" align="center" fullWidth fullHeight>
+        <Typography.P1 text="filterToViewData" />
+      </Flex>
+    );
   return (
     <div style={{ width: "100%" }}>
       <Line

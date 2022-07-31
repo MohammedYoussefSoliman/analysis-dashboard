@@ -1,11 +1,16 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Flex } from "components/Grids";
+import devices from "theme/sizes";
 
 const Wrapper = styled(Flex)`
   overflow-x: hidden;
-  max-height: calc(73vh - 100px);
-  .content {
+  max-height: 420px;
+  width: 100%;
+  ${devices.md} {
+    max-height: calc(73vh - 100px);
+  }
+  .aside--content {
     overflow-y: auto;
     flex: 1;
     &::-webkit-scrollbar {

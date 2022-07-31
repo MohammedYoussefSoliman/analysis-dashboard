@@ -58,6 +58,9 @@ export type FlexPropsType = {
   flex?: CSS.Property.Flex;
   fullWidth?: boolean;
   fullHeight?: boolean;
+  withWrap?: boolean;
+  maxWidth?: CSS.Property.MaxWidth;
+  minWidth?: CSS.Property.MinWidth;
   persistentGap?: boolean;
   className?: string;
   as?: React.ElementType;

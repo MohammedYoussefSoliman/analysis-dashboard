@@ -1,23 +1,28 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Flex } from "components/Grids";
 import devices from "theme/sizes";
 
-const Paper = styled(Flex)`
-  label: paper;
-  ${({ theme }) => css`
-    background-color: ${theme.colors.shades[300]};
-  `}
-  border-radius: 5px;
-  padding: 16px;
+const Wrapper = styled(Flex)`
+  label: dashboard-wrapper;
+  height: unset;
   ${devices.md} {
-    border-radius: 7.5px;
-    padding: 24px;
+    height: calc(100vh - 100px);
   }
-  ${devices.xl} {
-    border-radius: 10px;
-    padding: 36px;
+  width: 100%;
+  .content {
+    flex-direction: column;
+    width: 100%;
+    &--paper {
+      width: 100%;
+      max-height: 370px;
+    }
+    ${devices.md} {
+      flex-direction: row;
+      &--paper {
+        max-height: unset;
+      }
+    }
   }
 `;
 
-export default Paper;
+export default Wrapper;

@@ -11,8 +11,8 @@ import {
 
 const initialState: CoursesState = {
   courses: [],
-  filteredCourses: [],
   error: null,
+  filteredCourses: [],
   filterConfig: {
     selection: "country",
     value: "",

@@ -17,7 +17,7 @@ export default function Aside({ children, flex, header }: AsideProps) {
       <Card color={theme.colors.success} variant="filled">
         {header}
       </Card>
-      <Flex className="content" direction="column" gap="16px" fullWidth>
+      <Flex className="aside--content" direction="column" gap="16px" fullWidth>
         {children}
       </Flex>
     </Wrapper>

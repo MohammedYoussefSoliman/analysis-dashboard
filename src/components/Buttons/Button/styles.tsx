@@ -14,6 +14,7 @@ const StyledButton = styled("button", {
   align-items: center;
   justify-content: center;
   outline: none;
+  width: fit-content;
   min-width: 120px;
   padding: 8px 32px;
   height: 40px;
