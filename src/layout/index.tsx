@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper data-testid="app-layout">
       <Header />
       <main className="content">{children}</main>
       <Footer />

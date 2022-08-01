@@ -16,6 +16,7 @@ export default function Button({
 
   return (
     <StyledButton
+      data-testid="main-button"
       color={color || theme.colors.text.secondary}
       size={size}
       {...rest}

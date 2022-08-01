@@ -1,9 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
+import withAppProviders from "components/AppProvider/withAppProvider";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+test("renders learn react link", async () => {
+  const Application = withAppProviders(App);
+
+  await act(async () => {
+    render(<Application />);
+  });
+  const linkElement = screen.getByTestId("app-layout");
   expect(linkElement).toBeInTheDocument();
 });
