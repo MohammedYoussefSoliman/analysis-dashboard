@@ -10,7 +10,7 @@ export default function IconButton({
   ...rest
 }: IconButtonPropsType) {
   return (
-    <StyledButton color={color} {...rest}>
+    <StyledButton data-testid="button-icon" color={color} {...rest}>
       <Icon color={iconColor || color} size={iconSize} {...iconProps} />
     </StyledButton>
   );
