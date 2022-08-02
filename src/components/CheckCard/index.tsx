@@ -45,6 +45,7 @@ export default function CheckCard({
         );
       }}
       color={boxColor}
+      data-testid="check-card"
     >
       <Flex p={16} gap="32px" align="center" fullWidth>
         <CheckBoxIcon

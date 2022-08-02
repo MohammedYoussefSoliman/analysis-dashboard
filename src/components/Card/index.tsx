@@ -11,6 +11,7 @@ export default function Card({
   return (
     <Wrapper
       onClick={onClick}
+      data-testid="app-card"
       gap="16px"
       direction="column"
       variant={variant}

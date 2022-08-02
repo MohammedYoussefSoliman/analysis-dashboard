@@ -5,7 +5,7 @@ import Card from "components/Card";
 import Wrapper from "./styles";
 
 type AsideProps = {
-  flex: number;
+  flex?: number;
   children: React.ReactNode;
   header: React.ReactNode;
 };
@@ -13,7 +13,14 @@ export default function Aside({ children, flex, header }: AsideProps) {
   const theme = useTheme();
 
   return (
-    <Wrapper ph={20} as="aside" direction="column" gap="32px" flex={flex}>
+    <Wrapper
+      data-testid="aside"
+      ph={20}
+      as="aside"
+      direction="column"
+      gap="32px"
+      flex={flex}
+    >
       <Card color={theme.colors.success} variant="filled">
         {header}
       </Card>

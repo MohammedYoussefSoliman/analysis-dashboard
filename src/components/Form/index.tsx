@@ -40,6 +40,7 @@ export default function Form<T>({
         className={className}
         onSubmit={methods.handleSubmit(onSubmit)}
         {...htmlProps}
+        data-testid="hook-form"
       >
         {typeof children === "function"
           ? children({

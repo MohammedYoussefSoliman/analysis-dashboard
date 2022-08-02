@@ -11,5 +11,9 @@ export default function Container({
   width = "wide",
   children,
 }: ContainerPropType) {
-  return <Wrapper width={width}>{children}</Wrapper>;
+  return (
+    <Wrapper data-testid="app-container" width={width}>
+      {children}
+    </Wrapper>
+  );
 }

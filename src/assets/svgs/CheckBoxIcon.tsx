@@ -15,6 +15,7 @@ function CheckBoxIcon({ size, color, checked }: CheckboxType) {
         width={size || 24}
         height={size || 24}
         viewBox="0 0 24 24"
+        data-testid="checked-icon"
       >
         <path
           id="Icon_material-radio-button-checked"
@@ -32,6 +33,7 @@ function CheckBoxIcon({ size, color, checked }: CheckboxType) {
       width={size || 24}
       height={size || 24}
       viewBox="0 0 24 24"
+      data-testid="checked-icon"
     >
       <path
         id="Icon_material-radio-button-unchecked"

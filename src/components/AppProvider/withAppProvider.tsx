@@ -3,7 +3,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import "app/i18n";
-
+import AppProvider from "components/AppProvider";
 import { store, persister } from "app/state";
 
 export default function withAppProviders<T>(
@@ -17,7 +17,9 @@ export default function withAppProviders<T>(
           persistor={persister}
         >
           <Router>
-            <WrappedComponent {...props} />
+            <AppProvider>
+              <WrappedComponent {...props} />
+            </AppProvider>
           </Router>
         </PersistGate>
       </ReduxProvider>
