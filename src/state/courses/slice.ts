@@ -79,9 +79,11 @@ const slice = createSlice({
       return {
         ...state,
         courses: action.payload,
+        filteredCourses: action.payload,
         countries,
         camps,
         schools,
+        checkedSchool: schools,
         schoolsExtras,
       };
     },
