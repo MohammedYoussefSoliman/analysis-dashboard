@@ -160,7 +160,7 @@ export default function Chart() {
         data={data}
         options={options}
         onClick={(event) => {
-          printDatasetAtEvent(getElementAtEvent(ref.current, event));
+          printDatasetAtEvent(getElementAtEvent(ref?.current, event));
         }}
       />
     </div>

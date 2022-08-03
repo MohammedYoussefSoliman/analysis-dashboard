@@ -52,6 +52,7 @@ export default function Tooltip({
       position={position}
       forcedConfigs={forcedConfigs}
       ref={wrapperRef}
+      data-testid="tooltip"
     >
       {hover && (
         // eslint-disable-next-line react/jsx-no-useless-fragment
